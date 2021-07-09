@@ -2,9 +2,9 @@ import illustrationImg from '../assets/images/illustration.svg'
 import logoImg from '../assets/images/logo.svg'
 import googleIconImg from '../assets/images/google-icon.svg'
 import '../styles/auth.scss'
-import '../styles/button.scss'
 
-import { Button } from '../components/Button'
+
+import { Button } from '../components/Button/index'
 
 import { useHistory } from 'react-router-dom'
 import { FormEvent, useState } from 'react'
@@ -29,7 +29,7 @@ export function Home() {
     async function handleJoinRoom(event: FormEvent) {
         event.preventDefault()
 
-        if (roomCode.trim() == '') {
+        if (roomCode.trim() === '') {
             return
         }
 
@@ -38,7 +38,7 @@ export function Home() {
         if (!roomRef.exists()) {
             alert('Room does not exists')
         } else {
-            //history.push(`/rooms/${roomCode}`)
+            history.push(`/rooms/${roomCode}`)
             console.log(roomRef)
         }
 
