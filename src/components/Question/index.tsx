@@ -1,4 +1,5 @@
 import './styles.scss'
+import { ReactNode } from 'react'
 
 type QuestionPropsType = {
     content: string;
@@ -6,9 +7,10 @@ type QuestionPropsType = {
         name: string;
         avatar: string;
     }
+    children?: ReactNode;
 }
 
-export function Question({content, author}: QuestionPropsType) {
+export function Question({content, author, children}: QuestionPropsType) {
     return (
         <div className='question'>
             <p>{content}</p>
@@ -16,6 +18,9 @@ export function Question({content, author}: QuestionPropsType) {
                 <div className='user-info'>
                     <img src={author.avatar} alt={author.name}></img>
                     <span>{author.name}</span>
+                </div>
+                <div>
+                    {children}
                 </div>
             </footer>
         </div>
