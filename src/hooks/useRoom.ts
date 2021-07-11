@@ -56,6 +56,8 @@ export function useRoom(roomId: string) {
             setQuestions(parsedQuestions)
             setTitle(databaseRoom.title)
             console.log(databaseRoom.title)
+            console.log(firebaseQuestions)
+            console.log(parsedQuestions)
         })
 
         return () => {
